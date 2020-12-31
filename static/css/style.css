@@ -1,0 +1,131 @@
+/*Navbar*/
+#navbar{
+    align-content: center;
+}
+.nav-item {
+    text-align: center;
+}
+#toggle-btn{
+    border: 1px solid black;
+
+    color: black;
+}
+.navbar-toggler-icon{
+    color: white;
+}
+
+.dropdown-name {
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown-divider {
+    border: 0.5px solid lightgray;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#navbar-logo {
+    width: 48px;
+    height: 20px;
+}
+
+/*Divider*/
+.divider {
+    border: 2px solid midnightblue;
+}
+
+/*Carousel*/
+.carousel-inner {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    transition: all 100ms;
+}
+
+.carousel-indicators {
+    transform: translateY(45px);
+}
+
+.carousel-indicators .active {
+    background-color: darkslateblue;
+}
+
+.carousel-indicators li {
+    background-color: dimgrey;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+
+}
+
+
+.d-block {
+    width: auto;
+    height: 400px;
+    object-fit: contain;
+}
+
+/*Main*/
+#main {
+    height: auto;
+    margin-top: 50px;
+
+}
+.main-container{
+    text-align: center;
+    width: 800px;
+    margin: auto;
+}
+
+#blank {
+    height: 100px;
+}
+#emblem{
+    width: 30px;
+    height: 30px;
+}
+#tname{
+    text-align: left;
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+    background-color: midnightblue;
+    width: 100%;
+
+    transform: translateY(20px);
+    margin-bottom: 0px;
+    bottom: 0;
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+    color: white;
+}
+
+.contact__title {
+    margin-top: 30px;
+}
+
+.contact__links {
+    font-size: 40px;
+    margin: 14px 0;
+}
+
+.contact__links i {
+    transition: all 200ms ease;
+}
+
+.contact__links i:hover {
+    transform: scale(1.1);
+    color: pink;
+}
+
+.fa-github {
+    color: white;
+}
