@@ -1,17 +1,30 @@
 /*Navbar*/
-#navbar{
+#navbar {
     align-content: center;
 }
+
 .nav-item {
     text-align: center;
 }
-#toggle-btn{
+
+#toggle-btn {
     border: 1px solid black;
 
     color: black;
 }
-.navbar-toggler-icon{
+
+.navbar-toggler-icon {
     color: white;
+}
+
+#nav-link {
+    color: black;
+}
+
+#nav-link:hover {
+    color: midnightblue;
+    transform: scale(1.1);
+    transition: all 300ms ease-out;
 }
 
 .dropdown-name {
@@ -74,7 +87,8 @@
     margin-top: 50px;
 
 }
-.main-container{
+
+.main-container {
     text-align: center;
     width: 800px;
     margin: auto;
@@ -83,11 +97,13 @@
 #blank {
     height: 100px;
 }
-#emblem{
+
+#emblem {
     width: 30px;
     height: 30px;
 }
-#tname{
+
+#tname {
     text-align: left;
 }
 
