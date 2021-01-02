@@ -6,7 +6,7 @@ from selenium import webdriver
 app = Flask('__name__')
 
 client = MongoClient('localhost', 27017)
-db = client.dbsparta
+db = client.epls
 
 chrome_driver_dir = './static/bin/chromedriver'
 chrome_options = webdriver.ChromeOptions()
@@ -54,11 +54,11 @@ def insert_tables():
             'ga': ga,
             'gd': gd
         }
-        db.epls.insert_one(epl_tables)
+        db.tables.insert_one(epl_tables)
 
 
 def insert_all():
-    db.epls.drop()
+    db.tables.drop()
     insert_tables()
     driver.quit()
 
@@ -71,7 +71,7 @@ def check_recent():
         type_int = int(played)
         sum_selenium += type_int
 
-    finds = list(db.epls.find({}, {'_id': 0, 'played': 1}))
+    finds = list(db.tables.find({}, {'_id': 0, 'played': 1}))
 
     sum_db = 0
     for find in finds:
@@ -90,8 +90,6 @@ def check_recent():
 
 
 check_recent()
-
-
 #######################################################################################################################
 
 @app.route('/')
@@ -99,10 +97,10 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/api/borders', methods=['GET'])
-def get_borders():
-    epls = list(db.epls.find({}, {'_id': 0}))
-    return jsonify({'result': 'success', 'epls': epls})
+@app.route('/api/tables', methods=['GET'])
+def get_tables():
+    tables = list(db.tables.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'tables': tables})
 
 
 if __name__ == '__main__':

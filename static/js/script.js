@@ -1,21 +1,21 @@
 $(document).ready(function () {
     $('#tables-box').empty()
-    get_borders();
+    get_tables();
 
 })
 
-function get_borders() {
+function get_tables() {
     $.ajax({
         type: 'GET',
-        url: 'api/borders',
+        url: 'api/tables',
         data: {},
         success: function (response) {
             if (response['result'] == 'success') {
-                let epls = response['epls']
-                for (let i = 0; i < epls.length; i++) {
-                    let epl = epls[i]
+                let tables = response['tables']
+                for (let i = 0; i < tables.length; i++) {
+                    let table = tables[i]
                     
-                    makeTable(epl['rank'], epl['emblem'], epl['team_name'], epl['played'], epl['points'], epl['won'], epl['draw'], epl['lost'], epl['gf'], epl['ga'], epl['gd'])
+                    makeTable(table['rank'], table['emblem'], table['team_name'], table['played'], table['points'], table['won'], table['draw'], table['lost'], table['gf'], table['ga'], table['gd'])
                 }
             }
         }
