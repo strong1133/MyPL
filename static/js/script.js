@@ -6,26 +6,6 @@ $(document).ready(function () {
 
 })
 
-function tab() {
-    const tabHeader = document.getElementsByClassName("tab-header")[0];
-    const tabIndicator = document.getElementsByClassName("tab-indicator")[0];
-    const tabBody = document.getElementsByClassName("tab-body")[0];
-    const tabsPane = tabHeader.getElementsByTagName("div");
-
-    for (let i = 0; i < tabsPane.length; i++) {
-        tabsPane[i].addEventListener("click", function () {
-            tabHeader.getElementsByClassName("active")[0].classList.remove("active");
-            tabsPane[i].classList.add("active");
-
-            tabBody.getElementsByClassName("active")[0].classList.remove("active");
-            tabBody.getElementsByTagName("div")[i].classList.add("active");
-
-            tabIndicator.style.left = `calc(calc(100%/4)*${i})`
-        });
-
-    }
-}
-
 function active_tab() {
     $("div.tab-header div").click(function () {
         const tab_id = $(this).attr("data-tab");
@@ -44,7 +24,6 @@ function active_tab() {
         tabsPane[i].addEventListener("click", function () {
             tabIndicator.style.left = `calc(calc(100%/4)*${i})`
         });
-
     }
 }
 
