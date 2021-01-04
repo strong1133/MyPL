@@ -1,7 +1,6 @@
 from flask import Flask, render_template, jsonify
 from pymongo import MongoClient
-
-from table import check_recent
+from tables import check_recent
 
 app = Flask('__name__')
 
