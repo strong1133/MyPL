@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" id="nav-link" >My Page <span class="fas fa-user"></span></a>
+              <a class="nav-link" id="nav-link">My Page <span class="fas fa-user"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="nav-link" href="#">Setting <span class="fas fa-cog"></span></a>
@@ -89,37 +89,90 @@
           <span>Next</span>
         </a>
       </div>
+
     </section>
 
+    <!--Tab-->
+    <section id="tab">
+      <div class="tabs">
+        <div class="tab-indicator"></div>
+        <div class="tab-header">
+          <div class="active" data-tab="tab-1">
+            <i class="fas fa-chart-line"></i> 순위표
+          </div>
+          <div data-tab="tab-2">
+            <i class="fa fa-pencil-square-o"></i> 경기일정
+          </div>
+          <div data-tab="tab-3">
+            <i class="far fa-newspaper"></i> 주요 뉴스
+          </div>
+          <div data-tab="tab-4">
+            <i class="fa fa-envelope-o"></i> 그외
+          </div>
+        </div>
 
-    <!--main-->
-    <section id="main">
-      <div class="divider"></div>
-      <div class="main-container">
-        <table class="table">
-          <thead class="thead-dark">
-          <tr>
-            <th scope="col">Rank</th>
-            <th scope="col">클럽</th>
-            <th scope="col">경기</th>
-            <th scope="col">승</th>
-            <th scope="col">무</th>
-            <th scope="col">패</th>
-            <th scope="col">득점</th>
-            <th scope="col">실점</th>
-            <th scope="col">GD</th>
-            <th scope="col">승점</th>
-          </tr>
-          </thead>
-          <tbody id="tables-box">
-          <tr>
+        <!--Tapping-->
+        <div class="tab-body">
 
-          </tr>
-          </tbody>
-        </table>
+          <div id="tab-1" class="tab-content active">
 
+            <div class="divider"></div>
+            <div class="main-container">
+              <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">클럽</th>
+                  <th scope="col">경기</th>
+                  <th scope="col">승</th>
+                  <th scope="col">무</th>
+                  <th scope="col">패</th>
+                  <th scope="col">득점</th>
+                  <th scope="col">실점</th>
+                  <th scope="col">GD</th>
+                  <th scope="col">승점</th>
+                </tr>
+                </thead>
+                <tbody id="tables-box">
+                <tr>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div id="tab-2" class="tab-content">
+
+            <p>두번째 탭</p>
+            <p>두번째 탭</p>
+            <p>두번째 탭</p>
+
+          </div>
+
+          <div id="tab-3" class="tab-content">
+
+            <p>세번째 탭</p>
+            <p>세번째 탭</p>
+            <p>세번째 탭</p>
+
+          </div>
+
+          <div id="tab-4" class="tab-content">
+
+            <p>네번째 탭</p>
+            <p>네번째 탭</p>
+            <p>네번째 탭</p>
+
+          </div>
+        </div>
+        <!--Tapping-->
 
       </div>
+    </section>
+    <!--main-->
+    <section id="main">
+
     </section>
 
     <!--main-->
