@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify
 from pymongo import MongoClient
 from tables import check_recent
+from news import insert_news
 
 app = Flask('__name__')
 
@@ -9,6 +10,7 @@ db = client.epls
 
 # 최신화 체크-> selenium into MongoDB
 check_recent()
+insert_news()
 
 
 #######################################################################################################################

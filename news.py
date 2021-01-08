@@ -36,14 +36,14 @@ def get_articles(url):
 
     b = soup.select_one('#newsEndContents > span > img')
     if b is not None:
-        img_url = soup.select_one('#newsEndContents > span > img')['src']
+        img_url = soup.select_one('meta[property="og:image"]')['content']
     else:
         img_url = soup.select_one('meta[property="og:image"]')['content']
 
     content = soup.select_one('#newsEndContents').text.strip()
     press = soup.select_one('#pressLogo > a > img')['src']
     post_date = soup.select_one('#content > div > div.content > div > div.news_headline > div > span').text
-    print(url)
+
     doc = {
         'title': title,
         'img_url': img_url,
