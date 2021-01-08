@@ -24,6 +24,12 @@ def get_tables():
     return jsonify({'result': 'success', 'tables': tables})
 
 
+@app.route('/api/news', methods=['GET'])
+def get_news():
+    newses = list(db.newses.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'newses': newses})
+
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 

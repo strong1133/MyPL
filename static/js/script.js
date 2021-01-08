@@ -1,11 +1,15 @@
 $(document).ready(function () {
     $('#tables-box').empty()
+    $('#card_input').empty()
+
     get_tables();
+    get_news();
     active_tab()
 
 
 })
 
+//Tab
 function active_tab() {
     $("div.tab-header div").click(function () {
         const tab_id = $(this).attr("data-tab");
@@ -27,6 +31,7 @@ function active_tab() {
     }
 }
 
+// 순위표 API
 function get_tables() {
     $.ajax({
         type: 'GET',
@@ -45,6 +50,7 @@ function get_tables() {
     })
 }
 
+//순위표 append
 function makeTable(rank, emblem, team_name, played, points, won, draw, lost, gf, ga, gd) {
     let tempHtml = `<tr>
                     <th scope="row">${rank}</th>
@@ -60,9 +66,47 @@ function makeTable(rank, emblem, team_name, played, points, won, draw, lost, gf,
                     <td>${gd}</td>
                   </tr>`
     $('#tables-box').append(tempHtml)
-
 }
 
+//뉴스 API
+function get_news() {
+    $.ajax({
+        type: 'GET',
+        url: 'api/news',
+        data: {},
+        success: function (response) {
+            if (response['result'] == 'success') {
+                let newses = response['newses']
+                for (let i = 0; i < newses.length; i++) {
+                    let news = newses[i]
+                    makeNews(news['title'], news['img_url'], news['content'], news['press'], news['post_date'], news['article_url'])
+                }
+            }
+        }
+    })
+}
 
-
+//뉴스 append
+function makeNews(title, img_url, content, press, post_date, article_url) {
+    let tempHtml = `<div class="card">
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="card-image">
+                                <img
+                                    src="${img_url}"
+                                    alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <a href="${article_url}" target="_blank" class="news-title">${title}</a>
+                              <p class="subtitle">${content}</p>
+                              <p class="press"><img src="${press}" alt=""> <span class="press-date">${post_date}</span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`
+    $('#card_input').append(tempHtml)
+}
 

@@ -36,16 +36,17 @@ li {
     transition: all 300ms ease-out;
 }
 
-
 #navbar-logo {
     width: 48px;
     height: 20px;
 }
 
+
 /*Divider*/
 .divider {
     border: 1px solid var(--epl-blue);
 }
+
 
 /*Carousel*/
 .carousel-inner {
@@ -72,17 +73,16 @@ li {
 
 }
 
-
 .d-block {
     width: auto;
     height: 400px;
     object-fit: contain;
 }
 
+
 /*Tabs*/
 .tabs {
     margin-top: 30px;
-
 
 }
 
@@ -93,7 +93,6 @@ li {
     align-items: center;
     text-align: center;
     line-height: 60px;
-
 }
 
 .tabs .tab-header > div {
@@ -146,17 +145,8 @@ li {
     transition: all 500ms ease-in;
 }
 
-/*Main*/
-#main {
-    height: auto;
-}
 
-.main-container {
-    text-align: center;
-    width: 800px;
-    margin: auto;
-}
-
+/*Tables*/
 #blank {
     height: 100px;
 }
@@ -170,12 +160,60 @@ li {
     text-align: left;
 }
 
+
+/*News*/
+.card {
+    width: 700px;
+    height: 120px;
+    margin: 8px auto;
+
+}
+
+.card-image {
+    padding: 5px;
+    line-height: 105px;
+}
+
+.card-image > img {
+    width: 170px;
+    height: 110px;
+}
+
+.media-content {
+    margin-top: 2px;
+    padding: 5px;
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: var(--epl-blue);
+}
+
+.subtitle {
+    font-size: small;
+    color: #888888;
+}
+
+.press {
+    font-size: 5px;
+    color: cornflowerblue;
+}
+
+.press > img {
+    width: 70px;
+}
+
+.press-date {
+    color: #888888;
+}
+
 /* Contact */
 #contact {
     text-align: center;
     background-color: var(--epl-blue);
     width: 100%;
-
     transform: translateY(20px);
     margin-bottom: 0px;
     bottom: 0;
