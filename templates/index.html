@@ -19,6 +19,7 @@
     <!--Google-font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <!--JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -36,7 +37,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="{{ url_for('static',filename='logo.png') }}" id="navbar-logo">
+          <img src="{{ url_for('static',filename='epl-logo.png') }}" id="navbar-logo">
+          My_PL
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="toggle-btn">
@@ -108,7 +110,7 @@
             <i class="far fa-newspaper"></i> 주요 뉴스
           </div>
           <div data-tab="tab-4">
-            <i class="fa fa-envelope-o"></i> 그외
+            <i class="fas fa-medal"></i> 선수순위
           </div>
         </div>
 
@@ -165,7 +167,7 @@
               </thead>
 
               <tbody id="schedule-tbody">
-              
+
               </tbody>
             </table>
           </div>
@@ -208,12 +210,204 @@
           </div>
 
 
-          <!-- 4번째 탭 -->
+          <!-- 선수순위 -->
           <div id="tab-4" class="tab-content">
 
-            <p>네번째 탭</p>
-            <p>네번째 탭</p>
-            <p>네번째 탭</p>
+            <ul class="lead_inner">
+              <li>
+                <strong class="lead-title">최다 득점</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="https://sports-phinf.pstatic.net/player/wfootball/default/304973.png" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">모하메드 살라</span>
+                        <span class="team">리버풀</span>
+                      </div>
+                      <div class="stat">
+                        <span>13</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">손흥민</span>
+                        <span class="team">토트넘</span>
+                      </div>
+                      <div class="stat">
+                        <span>12</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">도미닉 칼버트 르윈</span>
+                        <span class="team">애버턴</span>
+                      </div>
+                      <div class="stat">
+                        <span>11</span>
+                        골
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 도움</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="https://sports-phinf.pstatic.net/player/wfootball/default/304973.png" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">모하메드 살라</span>
+                        <span class="team">리버풀</span>
+                      </div>
+                      <div class="stat">
+                        <span>13</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">손흥민</span>
+                        <span class="team">토트넘</span>
+                      </div>
+                      <div class="stat">
+                        <span>12</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">도미닉 칼버트 르윈</span>
+                        <span class="team">애버턴</span>
+                      </div>
+                      <div class="stat">
+                        <span>11</span>
+                        골
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 공격포인트</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="https://sports-phinf.pstatic.net/player/wfootball/default/304973.png" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">모하메드 살라</span>
+                        <span class="team">리버풀</span>
+                      </div>
+                      <div class="stat">
+                        <span>13</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">손흥민</span>
+                        <span class="team">토트넘</span>
+                      </div>
+                      <div class="stat">
+                        <span>12</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">도미닉 칼버트 르윈</span>
+                        <span class="team">애버턴</span>
+                      </div>
+                      <div class="stat">
+                        <span>11</span>
+                        골
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 슈팅</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="https://sports-phinf.pstatic.net/player/wfootball/default/304973.png" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">모하메드 살라</span>
+                        <span class="team">리버풀</span>
+                      </div>
+                      <div class="stat">
+                        <span>13</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">손흥민</span>
+                        <span class="team">토트넘</span>
+                      </div>
+                      <div class="stat">
+                        <span>12</span>
+                        골
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">도미닉 칼버트 르윈</span>
+                        <span class="team">애버턴</span>
+                      </div>
+                      <div class="stat">
+                        <span>11</span>
+                        골
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
 
           </div>
         </div>

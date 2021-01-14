@@ -8,27 +8,25 @@ li {
     list-style: none;
 }
 
+ol, ul {
+    padding-left: 0rem;
+}
+
 
 /*Navbar*/
 #navbar {
     align-content: center;
-}
-
-.nav-item {
-    text-align: center;
-}
-
-#toggle-btn {
-    border: 1px solid black;
-    color: black;
-}
-
-.navbar-toggler-icon {
+    background-color: var(--epl-purple);
     color: white;
+}
+#navbar .navbar-brand{
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 25px;
 }
 
 #nav-link {
-    color: black;
+    color: white;
 }
 
 #nav-link:hover {
@@ -38,15 +36,10 @@ li {
 }
 
 #navbar-logo {
-    width: 48px;
-    height: 20px;
+    width: 40px;
+
 }
 
-
-/*Divider*/
-.divider {
-    border: 1px solid var(--epl-blue);
-}
 
 
 /*Carousel*/
@@ -163,96 +156,116 @@ li {
 
 
 /*Schedules*/
-.thead-purple{
+.thead-purple {
     background-color: var(--epl-purple);
 }
-#schedule-img{
+
+#schedule-img {
     width: 40px;
     padding: 6px;
 }
-#th-schedule{
+
+#th-schedule {
     color: white;
     font-size: large;
     padding: 6px;
 }
-#th-index{
+
+#th-index {
     padding: 6px;
 }
-#th-index-match{
+
+#th-index-match {
     text-align: center;
 }
-th.schedule-th{
+
+th.schedule-th {
     color: var(--epl-blue);
 }
-#th-index-result{
+
+#th-index-result {
     text-align: center;
 }
-.match_team{
+
+.match_team {
     text-align: center;
 }
-p.result{
+
+p.result {
     text-align: center;
 }
-td.result{
+
+td.result {
     text-align: center;
 }
 
 
-#schedule-tbody > td{
+#schedule-tbody > td {
     padding: 12px;
 }
-.place{
+
+.place {
     color: #888888;
     margin-left: 3px;
     font-size: 5px;
 }
-.no_match .time{
+
+.no_match .time {
     color: darkred;
     font-size: large;
     font-weight: bold;
 }
+
 .no_match .place,
 .no_match .match_team,
 .no_match .result {
     opacity: 0;
     font-size: 5px;
 }
-.no_match_day{
+
+.no_match_day {
     opacity: 0;
     border-bottom: none;
 }
-span .home_team{
+
+span .home_team {
     width: 103px;
 }
-.match_img{
+
+.match_img {
     width: 25px;
     height: 25px;
 }
-.result{
+
+.result {
     margin: 0px;
     font-size: large;
     font-weight: bold;
 }
-.match_detail{
+
+.match_detail {
     margin-left: 10px;
     color: var(--epl-purple);
 }
-.match_detail:hover{
+
+.match_detail:hover {
     color: salmon;
     transform: scale(1.1);
     transition: all 200ms ease-out;
 }
 
 /*News*/
-#th-news{
+#th-news {
     height: 54px;
     color: white;
     background-color: darksalmon;
     font-size: large;
 }
-.fa-newspaper{
+
+.fa-newspaper {
     margin-left: 5px;
 }
+
 .card {
     width: 700px;
     height: 120px;
@@ -299,6 +312,127 @@ span .home_team{
 .press-date {
     color: #888888;
 }
+
+/*Lead_Player*/
+.lead_inner {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+
+.lead_inner li {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    padding-top: 53px;
+}
+
+.lead-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 53px;
+    font-size: 13px;
+    line-height: 53px;
+    background-color: #F7F7F9;
+    border-top: 2px solid dimgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.lead_area {
+    position: relative;
+}
+
+.image {
+    overflow: hidden;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    height: 79px;
+}
+
+.image img {
+    width: 63px;
+    vertical-align: top;
+}
+
+.image .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lead_inner li:first-child {
+    width: 261px;
+}
+
+.image + .list {
+    position: relative;
+    padding: 0 14px 0 91px;
+}
+
+.lead_inner li {
+    border-bottom: 1px solid lightgray;
+}
+
+.lead_inner li + li {
+    border-left: 1px solid lightgray;
+}
+
+.lead_inner .image + .list .text {
+    padding: 11px 42px 10px 17px;
+    text-align: left;
+}
+
+.lead_inner .text {
+    position: relative;
+    min-height: 30px;
+}
+
+.lead_inner .text + .text {
+    border-top: 1px solid lightgray;
+}
+
+.lead_inner .rank_num {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    font-size: 15px;
+}
+
+.lead_inner .best .rank_num, .lead_inner .best .stat {
+    color: #3f75da;
+    font-weight: bold;
+}
+
+.lead_inner .best .name {
+    font-weight: bold;
+}
+
+.lead_inner .info .name {
+    display: block;
+    font-size: 15px;
+}
+
+.lead_inner .info .team {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: #888888;
+    letter-spacing: -1px;
+}
+
+.lead_inner .stat {
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    font-size: 14px;
+}
+
 
 /* Contact */
 #contact {
