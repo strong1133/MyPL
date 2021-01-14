@@ -34,35 +34,50 @@ def insert_schedules():
             a = days.text.strip().split(' ')
             day = a[0]
             days_of_weekend = a[1]
+        else:
+            day = "no_match_day"
+            days_of_weekend = "no_match"
 
         # 경기장소
         place = tr.select_one('td.time_place > div > span.place')
         if place is not None:
             place = place.text
+        else:
+            place = "no_match"
 
         # home_team
         home_team = tr.select_one('div > span.team_left > span.name')
         if home_team is not None:
             home_team = home_team.text
+        else:
+            home_team = "no_match"
 
         # away_team
         away_team = tr.select_one('div > span.team_right > span.name')
         if away_team is not None:
             away_team = away_team.text
+        else:
+            away_team = "no_match"
 
         # home_team-home_team_score
         home_team_score = tr.select_one('div > span.team_left > span.score')
         if home_team_score is not None:
             home_team_score = home_team_score.text
+        else:
+            home_team_score = "경기 시작 전"
 
         # away_team_score
         away_team_score = tr.select_one('div > span.team_right > span.score')
         if away_team_score is not None:
             away_team_score = away_team_score.text
+        else:
+            away_team_score = "before_match"
 
         # home_team_emblem
         home_team_emblem = tr.select_one('div > span.team_left > img')
-        if home_team_emblem is not None:
+        if home_team_emblem is None:
+            home_team_emblem = " "
+        else:
             home_team_emblem = home_team_emblem['src']
             # img_url 추출
             emblem_b = home_team_emblem.split('=')
@@ -71,13 +86,21 @@ def insert_schedules():
 
         # away_team_emblem
         away_team_emblem = tr.select_one('div > span.team_right > img')
-        if away_team_emblem is not None:
+        if away_team_emblem is None:
+            away_team_emblem = " "
+        else:
             away_team_emblem = away_team_emblem['src']
             # img_url 추출
             emblem_b = away_team_emblem.split('=')
             emblem_c = emblem_b[1].split('&')
             away_team_emblem = emblem_c[0]
 
+        # match_detail_link
+        match_detail_link = tr.select_one('td.broadcast > div > a')
+        if match_detail_link is not None:
+            match_detail_link = match_detail_link['href']
+        else:
+            match_detail_link = "경기가 없습니다."
         # 딕셔너리 저장/DB 준비
         epl_schedules = {
             'date': day,
@@ -89,15 +112,17 @@ def insert_schedules():
             'home_team_score': home_team_score,
             'away_team_score': away_team_score,
             'home_team_emblem': home_team_emblem,
-            'away_team_emblem': away_team_emblem
+            'away_team_emblem': away_team_emblem,
+            'match_detail_link': match_detail_link
         }
         db.schedules.insert_one(epl_schedules)
 
 
-def insert_all():
+def schedules_insert_all():
     db.schedules.drop()
     insert_schedules()
     driver.quit()
 
 
-insert_all()
+
+schedules_insert_all()

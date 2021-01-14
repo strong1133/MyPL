@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify
 from pymongo import MongoClient
 from tables import check_recent
 from news import insert_news
+from matches import schedules_insert_all
 
 app = Flask('__name__')
 
@@ -11,6 +12,7 @@ db = client.epls
 # 최신화 체크-> selenium into MongoDB
 check_recent()
 insert_news()
+schedules_insert_all()
 
 
 #######################################################################################################################
@@ -30,6 +32,12 @@ def get_tables():
 def get_news():
     newses = list(db.newses.find({}, {'_id': 0}))
     return jsonify({'result': 'success', 'newses': newses})
+
+
+@app.route('/api/schedules', methods=['GET'])
+def get_schedules():
+    schedules = list(db.schedules.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'schedules': schedules})
 
 
 if __name__ == '__main__':

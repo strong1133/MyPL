@@ -1,5 +1,6 @@
 :root {
     --epl-blue: #00025e;
+    --epl-purple: #3D1A5A;
 }
 
 /*General*/
@@ -161,7 +162,97 @@ li {
 }
 
 
+/*Schedules*/
+.thead-purple{
+    background-color: var(--epl-purple);
+}
+#schedule-img{
+    width: 40px;
+    padding: 6px;
+}
+#th-schedule{
+    color: white;
+    font-size: large;
+    padding: 6px;
+}
+#th-index{
+    padding: 6px;
+}
+#th-index-match{
+    text-align: center;
+}
+th.schedule-th{
+    color: var(--epl-blue);
+}
+#th-index-result{
+    text-align: center;
+}
+.match_team{
+    text-align: center;
+}
+p.result{
+    text-align: center;
+}
+td.result{
+    text-align: center;
+}
+
+
+#schedule-tbody > td{
+    padding: 12px;
+}
+.place{
+    color: #888888;
+    margin-left: 3px;
+    font-size: 5px;
+}
+.no_match .time{
+    color: darkred;
+    font-size: large;
+    font-weight: bold;
+}
+.no_match .place,
+.no_match .match_team,
+.no_match .result {
+    opacity: 0;
+    font-size: 5px;
+}
+.no_match_day{
+    opacity: 0;
+    border-bottom: none;
+}
+span .home_team{
+    width: 103px;
+}
+.match_img{
+    width: 25px;
+    height: 25px;
+}
+.result{
+    margin: 0px;
+    font-size: large;
+    font-weight: bold;
+}
+.match_detail{
+    margin-left: 10px;
+    color: var(--epl-purple);
+}
+.match_detail:hover{
+    color: salmon;
+    transform: scale(1.1);
+    transition: all 200ms ease-out;
+}
+
 /*News*/
+#th-news{
+    height: 54px;
+    color: white;
+    background-color: darksalmon;
+    font-size: large;
+}
+.fa-newspaper{
+    margin-left: 5px;
+}
 .card {
     width: 700px;
     height: 120px;

@@ -1,11 +1,13 @@
 $(document).ready(function () {
     $('#tables-box').empty()
     $('#card_input').empty()
+    $('#result_null').empty()
 
     get_tables();
     get_news();
-    active_tab()
-
+    active_tab();
+    get_schedules();
+    check_null();
 
 })
 
@@ -110,3 +112,72 @@ function makeNews(title, img_url, content, press, post_date, article_url) {
     $('#card_input').append(tempHtml)
 }
 
+
+//Schedule API
+function get_schedules() {
+    $.ajax({
+        type: 'GET',
+        url: 'api/schedules',
+        data: {},
+        success: function (response) {
+            if (response['result'] == 'success') {
+                let schedules = response['schedules']
+                for (let i = 0; i < schedules.length; i++) {
+                    let schedule = schedules[i]
+                    makeSchedules(
+                        schedule['date'], schedule['day_of_the_week'], schedule['match_times'], schedule['place'],
+                        schedule['home_team'], schedule['away_team'], schedule['home_team_score'], schedule['away_team_score'],
+                        schedule['home_team_emblem'], schedule['away_team_emblem'], schedule['match_detail_link'])
+                }
+            }
+        }
+    })
+}
+
+//schedules append
+function makeSchedules(date, day_of_the_week, match_times, place, home_team, away_team, home_team_score, away_team_score,
+                       home_team_emblem, away_team_emblem, match_detail_link) {
+    console.log(home_team_score);
+    let tempHtml = `<tr id="schedule-tr" class="${place}">
+                        <th scope="row" class="${date}">
+                          ${date} ${day_of_the_week}
+                        </th>
+                        <td class="time">
+                          ${match_times}
+                          <span class="place">
+                            ${place}
+                          </span>
+                        </td>
+                        <td class="match_team">
+                          <span class="home_team">
+                            ${home_team}
+                            <img class="match_img" src="${home_team_emblem}" alt="">
+                          </span>
+                          <span class="vs">vs</span>
+                          <span class="away_team">
+                            <img class="match_img" src="${away_team_emblem}" alt="">
+                            ${away_team}
+                          </span>
+                        </td>
+                        <td class="result">
+                          <p class="result" id="result_${away_team_score}">
+                            ${home_team_score} : ${away_team_score}
+                            <a href="${match_detail_link}">
+                              <i class="fas fa-plus-square match_detail">
+                              </i>
+                            </a>
+                          </p>
+                        </td>
+                      </tr>`
+    $('#schedule-tbody').append(tempHtml)
+    $('#result_before_match').replaceWith(home_team_score,`<a href="${match_detail_link}">
+                                                              <i class="fas fa-plus-square match_detail">
+                                                              </i>
+                                                            </a>`)
+
+}
+
+
+function check_null() {
+    $('.no_match').append(`<p>sdsad</p>`)
+}
