@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from tables import check_recent
 from news import insert_news
 from matches import schedules_insert_all
+from lead_player import insert_leaders
 
 app = Flask('__name__')
 
@@ -13,6 +14,7 @@ db = client.epls
 check_recent()
 insert_news()
 schedules_insert_all()
+insert_leaders()
 
 
 #######################################################################################################################
@@ -38,6 +40,12 @@ def get_news():
 def get_schedules():
     schedules = list(db.schedules.find({}, {'_id': 0}))
     return jsonify({'result': 'success', 'schedules': schedules})
+
+
+@app.route('/api/leaders', methods=['GET'])
+def get_leaders():
+    leaders = list(db.lead_player.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'leaders': leaders})
 
 
 if __name__ == '__main__':

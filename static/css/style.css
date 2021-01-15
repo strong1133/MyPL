@@ -19,35 +19,74 @@ ol, ul {
     background-color: var(--epl-purple);
     color: white;
 }
-#navbar .navbar-brand{
+
+#navbar .navbar-brand {
     color: white;
     font-family: 'Luckiest Guy', cursive;
     font-size: 25px;
 }
 
+.navbar-light .navbar-toggler {
+    color: white;
+    border: 0;
+    line-height: 40px;
+    font-size: 30px;
+
+}
+
+.navbar-light .navbar-toggler:hover {
+    border: 0;
+    outline: 0;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: none;
+}
+
+.collapsing .nav-divider,
+.show .nav-divider {
+    display: none;
+}
+
 #nav-link {
     color: white;
+    font-weight: bold;
+}
+
+.nav-link-icon {
+    margin-right: 5px;
+    width: 23px;
+    margin-top: -3px;
+}
+
+.nav-divider {
+    background-color: white;
+    width: 2px;
+    height: 20px;
+    transform: translateY(10px);
 }
 
 #nav-link:hover {
-    color: var(--epl-blue);
-    transform: scale(1.1);
+    color: salmon;
     transition: all 300ms ease-out;
+}
+
+.container-fluid#toggle-btn:hover {
+    color: salmon;
 }
 
 #navbar-logo {
     width: 40px;
-
 }
-
 
 
 /*Carousel*/
 .carousel-inner {
     width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: white;
-    transition: all 100ms;
+    transition: all 20ms;
+    overflow: hidden;
 }
 
 .carousel-indicators {
@@ -64,13 +103,22 @@ ol, ul {
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--epl-purple);
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+#carousel_main {
+    height: 500px;
+    object-fit: contain;
 }
 
 .d-block {
     width: auto;
-    height: 400px;
-    object-fit: contain;
+    height: 700px;
+    object-fit: cover;
 }
 
 
@@ -366,9 +414,6 @@ span .home_team {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.lead_inner li:first-child {
-    width: 261px;
-}
 
 .image + .list {
     position: relative;

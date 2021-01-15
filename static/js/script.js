@@ -2,12 +2,13 @@ $(document).ready(function () {
     $('#tables-box').empty()
     $('#card_input').empty()
     $('#result_null').empty()
+    $('#lead_inner').empty()
 
     get_tables();
     get_news();
     active_tab();
     get_schedules();
-    check_null();
+    get_leaders();
 
 })
 
@@ -137,7 +138,6 @@ function get_schedules() {
 //schedules append
 function makeSchedules(date, day_of_the_week, match_times, place, home_team, away_team, home_team_score, away_team_score,
                        home_team_emblem, away_team_emblem, match_detail_link) {
-    console.log(home_team_score);
     let tempHtml = `<tr id="schedule-tr" class="${place}">
                         <th scope="row" class="${date}">
                           ${date} ${day_of_the_week}
@@ -178,6 +178,204 @@ function makeSchedules(date, day_of_the_week, match_times, place, home_team, awa
 }
 
 
-function check_null() {
-    $('.no_match').append(`<p>sdsad</p>`)
+// 선수순위표 API
+function get_leaders() {
+    $.ajax({
+        type: 'GET',
+        url: 'api/leaders',
+        data: {},
+        success: function (response) {
+            if (response['result'] == 'success') {
+                let leaders = response['leaders']
+                makeLeaders(leaders)
+            }
+        }
+    })
+}
+// ${leaders[2].name}
+//선수순위표 append
+function makeLeaders(leaders) {
+
+    let tempHtml = ` <ul class="lead_inner">
+              <li>
+                <strong class="lead-title">최다 득점</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="${leaders[0].player_img}" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list" id ="lead_inner">
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">${leaders[0].name}</span>
+                        <span class="team">${leaders[0].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[0].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">${leaders[1].name}</span>
+                        <span class="team">${leaders[1].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[1].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                       <span class="name">${leaders[2].name}</span>
+                        <span class="team">${leaders[2].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[2].stat}
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 도움</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="${leaders[3].player_img}" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">${leaders[3].name}</span>
+                        <span class="team">${leaders[3].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[3].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">${leaders[4].name}</span>
+                        <span class="team">${leaders[4].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[4].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">${leaders[5].name}</span>
+                        <span class="team">${leaders[5].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[5].stat}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 공격포인트</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="${leaders[6].player_img}" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">${leaders[6].name}</span>
+                        <span class="team">${leaders[6].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[6].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">${leaders[7].name}</span>
+                        <span class="team">${leaders[7].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[7].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">${leaders[8].name}</span>
+                        <span class="team">${leaders[8].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[8].stat}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><strong class="lead-title">최다 슈팅</strong>
+                <div class="lead_area">
+                  <div class="image">
+                    <img src="${leaders[9].player_img}" alt="">
+                    <span class="mask"></span>
+                  </div>
+
+                  <div class="list">
+
+                    <div class="text best">
+                      <b class="rank_num">1</b>
+                      <div class="info">
+                        <span class="name">${leaders[9].name}</span>
+                        <span class="team">${leaders[9].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[9].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">2</b>
+                      <div class="info">
+                        <span class="name">${leaders[10].name}</span>
+                        <span class="team">${leaders[10].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[10].stat}
+                      </div>
+                    </div>
+
+                    <div class="text">
+                      <b class="rank_num">3</b>
+                      <div class="info">
+                        <span class="name">${leaders[11].name}</span>
+                        <span class="team">${leaders[11].team}</span>
+                      </div>
+                      <div class="stat">
+                        ${leaders[11].stat}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </ul>`
+    $('#lead_inner').append(tempHtml)
 }
