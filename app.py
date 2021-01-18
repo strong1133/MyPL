@@ -1,3 +1,5 @@
+
+from apscheduler.schedulers.background import BackgroundScheduler
 from flask import Flask, render_template, jsonify
 from pymongo import MongoClient
 from tables import check_recent
@@ -7,14 +9,26 @@ from lead_player import insert_leaders
 
 app = Flask('__name__')
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://tjrwls455:3879@13.125.246.107', 27017)
 db = client.epls
 
+
 # 최신화 체크-> selenium into MongoDB
+def recently():
+    print("===최신화===")
+    check_recent()
+    insert_news()
+    schedules_insert_all()
+    insert_leaders()
+
+
+# 최초 실행시 최신화 체크
 check_recent()
-insert_news()
-schedules_insert_all()
-insert_leaders()
+
+# 주기적으로 최신화 반복
+sched = BackgroundScheduler()
+sched.start()
+sched.add_job(recently, 'interval', seconds=120, id="test_2")
 
 
 #######################################################################################################################

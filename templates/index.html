@@ -8,6 +8,9 @@
     <meta name="author" content="정석진">
     <meta name="description" content="SJ`s Project#1_from /scc">
     <link rel="icon" type="image/png" href="{{ url_for('static',filename='MyPL_logo.png') }}">
+    <meta property="og:title" content="My PL"/>
+    <meta property="og:description" content="프리미어리그 정보 모아보"/>
+    <meta property="og:image" content="{{ url_for('static', filename='slide_img01.jpg') }}"/>
 
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -78,10 +81,10 @@
           <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
           <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
         </ol>
-        <div class="carousel-inner ">
+        <div class="carousel-inner">
 
           <div class="carousel-item active">
-            <img src="https://wallpapercave.com/wp/wp1830694.png" class="d-block w-100 cover" id="carousel_main"
+            <img src="{{ url_for('static',filename='carousel-first.png') }}" class="d-block w-100 cover" id="carousel_main"
                  alt="First">
           </div>
           <div class="carousel-item">
@@ -90,7 +93,7 @@
                 class="d-block w-100 cover" alt="Second">
           </div>
           <div class="carousel-item">
-            <img src="https://wallpapercave.com/wp/wp1830654.jpg" class="d-block w-100 cover" alt="Third">
+            <img src="https://resources.premierleague.com/photos/premierleague/photo/2020/12/28/02de4f81-a7d2-4bdb-a312-2dd5f6908a7d/1293502031.jpg?width=1350&height=759" class="d-block w-100 cover" alt="Third">
           </div>
 
           <div class="carousel-item">
@@ -226,6 +229,16 @@
 
           <!-- 선수순위 -->
           <div id="tab-4" class="tab-content">
+             <table class="table">
+              <thead class="thead-lead">
+              <tr>
+                <th scope="col" id="th-lead">
+                  <i class="fas fa-medal"></i>
+                  선수순위
+                </th>
+              </tr>
+              </thead>
+            </table>
             <div>
               <ul class="lead_inner" id="lead_inner">
                 <li>

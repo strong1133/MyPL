@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://tjrwls455:3879@13.125.246.107', 27017)
 db = client.epls
 
 headers = {

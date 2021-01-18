@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 from selenium import webdriver
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://tjrwls455:3879@13.125.246.107', 27017)
 db = client.epls
 
 chrome_driver_dir = './static/bin/chromedriver'
