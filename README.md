@@ -22,7 +22,7 @@
 ## 🦄 프로젝트 썸네일
 
 <p align="center">
-<img src="hhttps://github.com/strong1133/MyPL/blob/main/sample/mypl01.JPG?raw=true" width="70%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl01.JPG?raw=true" width="70%"></img>
 </p>
 
 </br>
