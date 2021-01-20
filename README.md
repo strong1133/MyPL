@@ -29,11 +29,16 @@
 
 ## :orange_book: 개발일지
 
-:heavy_check_mark: 회원가입 구현과정  
-https://lovecode.tistory.com/122
+:heavy_check_mark: Velog TIL  
+https://velog.io/@strong1133
+
 </br>
-:heavy_check_mark: 로그인 구현과정  
-https://lovecode.tistory.com/124
+
+## :mag: 요약
+
+- 해외축구 영국 프리미어 리그의 정보를 한 페이지에 모아서 볼 수 있는 정보 제공 서비스
+- 네이버스포츠의 해외축구 데이터들을 크롤링 하여 db에 저장하고 화면에 뿌려주는 Selenium, Beautifulsoup 로직
+- db의 최신화 확인 모듈을 만들어 주기적으로 실행 함으로써 최신화 상태 유지
 
 </br>
 
@@ -41,9 +46,12 @@ https://lovecode.tistory.com/124
 
 #### :orange_book: backend
 
-- Springboot
-- MYSQL, JPA
-- spring cloud (zuul, eureka)
+- Python
+- Flask
+- Beautifulsoup
+- Selenium
+- BackgroundScheduler
+- Mongodb - pymongo
 
 #### :orange_book: frontend
 
@@ -51,23 +59,28 @@ https://lovecode.tistory.com/124
 - CSS
 - JavaScript
 - JQuery
+- JSON
+
+#### :orange_book: Hosting
+
+- AWS
+- Lenux
+- ubuntu
 
 </br>
 
 ## :package: 개발 환경
 
-- jdk 11
-- mysql 8.0.22
+- Pycharm
+- Robo 3T
+- ubuntu, aws
 
 </br>
 
 ## :closed_book: server port
 
-- gateway : 8090
-- auth-server : 8081
-- user-server : 8020
-- eureka-server : 8761
-- front-web : 8030
+- flask: 5000
+- mongodb: 27017
 
 </br>
 
@@ -76,65 +89,54 @@ https://lovecode.tistory.com/124
 #### :heavy_check_mark: 메인 화면
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102852032-a45c6580-4460-11eb-99da-71dfe504100a.png" width="90%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl01.JPG?raw=true" width="90%"></img>
 </p>
 
 </br>
 
-#### :heavy_check_mark: 로그인
+#### :heavy_check_mark: 순위표
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102852064-bc33e980-4460-11eb-90ee-a9ddc9c411ae.png" width="90%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_tables.JPG?raw=true" width="90%"></img>
 </p>
 
 </br>
 
-#### :heavy_check_mark: 회원가입
+#### :heavy_check_mark: 경기일정
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102852104-d372d700-4460-11eb-8703-f555c781e233.png" width="90%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_schedules.JPG?raw=true" width="90%"></img>
 </p>
 
 </br>
 
-#### :heavy_check_mark: 회원가입 성공
+#### :heavy_check_mark: 스포츠 뉴스
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102852195-01581b80-4461-11eb-83bc-5c3f2e155d1f.png" width="90%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_news.JPG?raw=true" width="90%"></img>
 </p>
 
 </br>
 
-#### :heavy_check_mark: 사용자 관리
+#### :heavy_check_mark: 선수 순위
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102852237-22b90780-4461-11eb-80fe-073bfb2f96c1.png" width="90%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_leaders.JPG?raw=true" width="90%"></img>
 </p>
 
 </br>
 
-## :mag: 대표 기능 로직
+## :mag: 반응형
 
-#### :heavy_check_mark: 로그인 흐름
+#### :heavy_check_mark: 네비게이션
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102902085-cc27e980-44b1-11eb-8b70-176a7e6df311.png" width="100%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive01.JPG?raw=true" width="100%"></img>
+</p>
+<p align="center">
+<img src="hhttps://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive02.JPG?raw=true" width="100%"></img>
 </p>
 
 </br>
-
-#### :heavy_check_mark: 사용자 조회 (관리자권한)
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102902433-56704d80-44b2-11eb-9ce8-6019bab08f99.png" width="100%"></img>
-</p>
-
-</br>
-
-#### :heavy_check_mark: 회원가입 흐름
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/46397442/102902464-6425d300-44b2-11eb-91fb-d10d21f70d14.png" width="100%"></img>
-</p>
 
 </br>
