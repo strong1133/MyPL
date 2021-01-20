@@ -4,7 +4,7 @@
 
 </br></br>
 
-## 👨‍ Part
+## 🤠 Part
 
 총 1인
 
@@ -12,10 +12,18 @@
 
 ## :rocket:기능
 
-- 회원가입
-- 로그인
-- 이메일 인증
-- 사용자 정보 조회 (관리자권한만 가능)
+- 현재 epl 순위표
+- 현재 epl 경기일정
+- 네이버스포츠 인기 뉴스
+- 현재 epl 선수순위
+
+</br>
+
+## 🦄 프로젝트 썸네일
+
+<p align="center">
+<img src="hhttps://github.com/strong1133/MyPL/blob/main/sample/mypl01.JPG?raw=true" width="70%"></img>
+</p>
 
 </br>
 
