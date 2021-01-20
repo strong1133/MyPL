@@ -134,7 +134,7 @@ https://velog.io/@strong1133
 <img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive01.JPG?raw=true" width="100%"></img>
 </p>
 <p align="center">
-<img src="hhttps://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive02.JPG?raw=true" width="100%"></img>
+<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive02.JPG?raw=true" width="100%"></img>
 </p>
 
 </br>
