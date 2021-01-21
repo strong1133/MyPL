@@ -63,12 +63,10 @@ https://velog.io/@strong1133
 - CSS
 - JavaScript
 - JQuery
-- JSON
 
 #### :orange_book: Hosting
 
-- AWS
-- Lenux
+- AWS: EC2
 - ubuntu
 
 </br>
@@ -76,15 +74,7 @@ https://velog.io/@strong1133
 ## :package: 개발 환경
 
 - Pycharm
-- Robo 3T
 - ubuntu, aws
-
-</br>
-
-## :closed_book: server port
-
-- flask: 5000
-- mongodb: 27017
 
 </br>
 
