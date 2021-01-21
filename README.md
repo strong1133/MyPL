@@ -129,7 +129,7 @@ https://velog.io/@strong1133
 </p>
 
 </br>
-asd
+
 ## :mag: 반응형
 
 #### :heavy_check_mark: 네비게이션
