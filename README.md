@@ -128,8 +128,24 @@ https://velog.io/@strong1133
 <img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive01.JPG?raw=true" width="100%"></img>
 </p>
 <p align="center">
-<img src="https://github.com/strong1133/MyPL/blob/main/sample/mypl_responsive02.JPG?raw=true" width="100%"></img>
+<img src="https://github.com치/strong1133/MyPL/blob/main/sample/mypl_responsive02.JPG?raw=true" width="100%"></img>
 </p>
+
+</br>
+
+
+## 💽 Setting
+
+- 패키지 설치  ```pip install -r requierments.txt```
+- 실행 ``` python app.py ```
+- localhost에서 실행 할 경우  
+    ```client = MongoClient('localhost', 27017)```
+- ubuntu로 실행시 크롬옵션 관련 이슈 발생시  
+    1. 크롬버전 확인 ``` google-chrome --version ```
+    2. 크롬 버전에 맞는 리눅스용 크롬드라이버를 다운받아 static>bin안에 넣어줘야함.
+    3. 관련 블로그  
+     https://somjang.tistory.com/entry/Ubuntu-Ubuntu-%EC%84%9C%EB%B2%84%EC%97%90-Selenium-%EC%84%A4%EC%B9%98%ED%95%98%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0 
+
 
 </br>
 
